@@ -18,12 +18,11 @@ h1 {
 .container {
   /* color: #fff; */
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   margin: 150px auto;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 100px;
   border-radius: 15px;
@@ -81,13 +80,25 @@ h1 {
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  width: 100%;
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.time-width {
+  text-align: center;
+  width: 100px;
 }
 
 #time {
   font-size: 3.2rem;
 }
 
-#date {
+#date-para {
   font-size: 1.3rem;
 }
 
