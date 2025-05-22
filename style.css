@@ -5,9 +5,10 @@
 body {
   padding: 0;
   margin: 0;
-  background-image: url(./images/holding-clock.jpg);
-  background-size: 100vw;
-  background-repeat: no-repeat;
+  /* background: #070e2f; */
+}
+body {
+  background: linear-gradient(90deg, #e9f0fe, #c4dcff);
 }
 
 h1 {
@@ -15,7 +16,7 @@ h1 {
 }
 
 .container {
-  border: 1px solid black;
+  /* color: #fff; */
   width: 100%;
   max-width: 400px;
   margin: 150px auto;
@@ -26,7 +27,11 @@ h1 {
   align-items: center;
   gap: 100px;
   border-radius: 15px;
-  position: relative;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.102);
+  border: 1px solid rgba(255, 255, 255, 0.302);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
+  z-index: 1;
 }
 
 .theme-mode-icon {
@@ -34,6 +39,41 @@ h1 {
   top: 2px;
   right: 2px;
   cursor: pointer;
+  /* filter: brightness(0) invert(1); */
+}
+
+.theme-mode-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-blue {
+  width: 150px;
+  height: 150px;
+  background: #738dff;
+  top: 70px;
+  left: 500px;
+}
+
+.circle-pink {
+  width: 120px;
+  height: 120px;
+  background: #ff7ccd;
+  bottom: 170px;
+  left: 600px;
+}
+
+.circle-yellow {
+  width: 200px;
+  height: 200px;
+  background: #e7ff7d;
+  bottom: 330px;
+  right: 500px;
 }
 
 .time-date-container {
@@ -59,8 +99,34 @@ h1 {
 
 button {
   cursor: pointer;
-  padding: 7px 24px;
-  border-radius: 5px;
-  border: 1px solid black;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: #000;
   font-size: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  color: #2a2a2a;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hr {
+  background: rgba(115, 141, 255, 0.2);
+}
+
+.btn-time-zone {
+  background: rgba(255, 124, 205, 0.2);
 }
