@@ -5,6 +5,9 @@
 body {
   padding: 0;
   margin: 0;
+  background-image: url(./images/holding-clock.jpg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -13,6 +16,7 @@ h1 {
 
 .container {
   border: 1px solid black;
+  width: 100%;
   max-width: 400px;
   margin: 150px auto;
   padding: 40px;
@@ -22,6 +26,14 @@ h1 {
   align-items: center;
   gap: 100px;
   border-radius: 15px;
+  position: relative;
+}
+
+.theme-mode-icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
 }
 
 .time-date-container {

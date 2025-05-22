@@ -11,13 +11,14 @@
 
 <body>
     <div class="container">
+        <img class="theme-mode-icon" src="./images/theme-mode.png" alt="Theme Mode Icon" width="35px">
         <div class="time-date-container">
             <div id="time">00:00:00:00</div>
             <div id="date">Loading...</div>
         </div>
         <div class="button-container">
-            <button>12/24 hr</button>
-            <button>Local Time</button>
+            <button class="btn-hr" onclick="toggleHour()">12/24 hr</button>
+            <button class="btn-time-zone">Local Time</button>
         </div>
     </div>
 
