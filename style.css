@@ -5,12 +5,10 @@
 body {
   padding: 0;
   margin: 0;
-  /* background: linear-gradient(90deg, #fefff3, #c4dcff); */
-  background: linear-gradient(100deg, #fffdfd, #ffeef8, #edf8ff);
+  background: linear-gradient(90deg, #fffdfd, #ffeef8, #edf8ff);
 }
 
 body.dark-mode {
-  /* background: linear-gradient(90deg, #121212, #1e1e1e); */
   background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
 }
 
@@ -30,7 +28,7 @@ body.dark-mode {
   align-items: center;
   gap: 100px;
   border-radius: 15px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.102);
   border: 1px solid rgba(255, 255, 255, 0.302);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
@@ -141,7 +139,7 @@ button {
 }
 
 .dark-mode #date-para {
-  color: #aaa;
+  color: #b9b9b9;
 }
 
 .button-container {
