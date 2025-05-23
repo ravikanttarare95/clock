@@ -43,6 +43,7 @@ body.dark-mode {
   top: 2px;
   right: 2px;
   cursor: pointer;
+  width: 40px;
 }
 
 .dark-mode .theme-mode-icon {
@@ -279,8 +280,20 @@ footer a,
     gap: 50px;
   }
 
+  .theme-mode-icon {
+    width: 30px;
+  }
+
   .time-date-container {
     gap: 10px;
+  }
+
+  #time {
+    font-size: 2.5rem;
+  }
+
+  #date-para {
+    font-size: 1.2rem;
   }
 
   .circle-blue {
@@ -309,5 +322,9 @@ footer a,
 
   .button-container {
     justify-content: space-between;
+  }
+
+  button {
+    font-size: 0.8rem;
   }
 }
