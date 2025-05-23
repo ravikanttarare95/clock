@@ -41,7 +41,33 @@ setInterval(() => {
   seconds.innerHTML = `${s}`;
   milliSeconds.innerHTML = `${ms}`;
 
-  datePara.innerHTML = `${
-    days[currentTime.getDay()]
-  }, ${months[currentTime.getMonth()]} ${currentTime.getDate()}, ${currentTime.getFullYear()}`;
+  datePara.innerHTML = `${days[currentTime.getDay()]}, ${
+    months[currentTime.getMonth()]
+  } ${currentTime.getDate()}, ${currentTime.getFullYear()}`;
 }, 100);
+
+function getTheme() {
+  return localStorage.getItem("theme");
+}
+
+window.onload = function () {
+  const currentTheme = getTheme();
+  if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
+  }
+};
+
+function toggleTheme() {
+  const currentTheme = getTheme();
+  if (currentTheme === "dark") {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("theme", "light");
+  } else {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+  }
+}
