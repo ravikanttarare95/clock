@@ -133,6 +133,10 @@ button {
   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
 }
 
+#am-pm {
+  display: none;
+}
+
 #date-para {
   font-size: 1.4rem;
   color: #474747;
