@@ -5,11 +5,13 @@
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(90deg, #e9f0fe, #c4dcff);
+  /* background: linear-gradient(90deg, #fefff3, #c4dcff); */
+  background: linear-gradient(100deg, #fffdfd, #ffeef8, #edf8ff);
 }
 
 body.dark-mode {
-  background: linear-gradient(90deg, #121212, #1e1e1e);
+  /* background: linear-gradient(90deg, #121212, #1e1e1e); */
+  background: linear-gradient(90deg, #1a1a1a, #2b2b2b);
 }
 
 .container {
@@ -110,18 +112,22 @@ body.dark-mode {
 .time-container {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 85%;
 }
 
 .time-width {
   text-align: center;
-  width: 100px;
+  width: 60px;
 }
 
 #time {
   font-size: 3.2rem;
-  color: #2a2a2a;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#time,
+button {
+  color: #2a2a2a;
 }
 
 .dark-mode #time {
@@ -150,12 +156,10 @@ button {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.15);
-  color: #000;
   font-size: 1rem;
   font-weight: 500;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  color: #2a2a2a;
 }
 
 .dark-mode button {
@@ -197,6 +201,7 @@ footer {
   bottom: 0;
   width: 100%;
   backdrop-filter: blur(10px);
+  box-shadow: 0 -1px 5px 0 #666;
   padding: 3px 0;
 }
 
@@ -238,7 +243,7 @@ footer a,
 
 @media (min-width: 400px) and (max-width: 640px) {
   .clock-container {
-    padding: 40px 20px 20px;
+    padding: 30px 20px 20px;
   }
 
   .circle-blue {
@@ -246,6 +251,7 @@ footer a,
     height: 140px;
     top: -70px;
     left: -40px;
+    background: #aebeff;
   }
 
   .circle-pink {
@@ -253,6 +259,7 @@ footer a,
     height: 120px;
     bottom: -70px;
     left: 40px;
+    background: #ffb3e6;
   }
 
   .circle-yellow {
@@ -260,34 +267,42 @@ footer a,
     height: 150px;
     bottom: 75px;
     right: 0px;
+    background: #f7ffb3;
   }
 }
 
 @media (max-width: 399px) {
   .clock-container {
-    padding: 40px 20px 20px;
+    padding: 20px;
     gap: 50px;
   }
 
+  .time-date-container {
+    gap: 10px;
+  }
+
   .circle-blue {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     top: -70px;
-    left: -40px;
+    left: 8px;
+    background: #aebeff;
   }
 
   .circle-pink {
-    width: 100px;
-    height: 100px;
-    bottom: -70px;
-    left: 40px;
+    width: 80px;
+    height: 80px;
+    bottom: -55px;
+    left: 70px;
+    background: #ffb3e6;
   }
 
   .circle-yellow {
-    width: 130px;
-    height: 130px;
-    bottom: 85px;
+    width: 110px;
+    height: 110px;
+    bottom: 60px;
     right: 0px;
+    background: #f7ffb3;
   }
 
   .button-container {
