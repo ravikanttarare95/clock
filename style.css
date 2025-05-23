@@ -13,8 +13,14 @@ body.dark-mode {
 }
 
 .container {
-  width: 100%;
   max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.clock-container {
+  width: 100%;
   margin: 150px auto;
   padding: 40px;
   display: flex;
@@ -26,10 +32,9 @@ body.dark-mode {
   background: rgba(255, 255, 255, 0.102);
   border: 1px solid rgba(255, 255, 255, 0.302);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.102);
-  z-index: 1;
 }
 
-.dark-mode .container {
+.dark-mode .clock-container {
   color: #fff;
 }
 
@@ -55,30 +60,31 @@ body.dark-mode {
 .circle {
   position: absolute;
   border-radius: 50%;
+  z-index: 0;
 }
 
 .circle-blue {
   width: 150px;
   height: 150px;
   background: #738dff;
-  top: 70px;
-  left: 500px;
+  top: -80px;
+  left: -50px;
 }
 
 .circle-pink {
   width: 120px;
   height: 120px;
   background: #ff7ccd;
-  bottom: 170px;
-  left: 600px;
+  bottom: -80px;
+  left: 40px;
 }
 
 .circle-yellow {
   width: 200px;
   height: 200px;
   background: #e7ff7d;
-  bottom: 330px;
-  right: 500px;
+  bottom: 50px;
+  right: -90px;
 }
 
 .dark-mode .circle-blue {
