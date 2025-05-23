@@ -10,7 +10,6 @@ body {
 
 body.dark-mode {
   background: linear-gradient(90deg, #121212, #1e1e1e);
-  color: #f1f1f1;
 }
 
 .container {
@@ -39,7 +38,6 @@ body.dark-mode {
   top: 2px;
   right: 2px;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .dark-mode .theme-mode-icon {
@@ -48,6 +46,10 @@ body.dark-mode {
 
 .theme-mode-icon:hover {
   transform: scale(1.1);
+}
+
+.theme-mode-icon:active {
+  transform: scale(0.9);
 }
 
 .circle {
@@ -79,6 +81,18 @@ body.dark-mode {
   right: 500px;
 }
 
+.dark-mode .circle-blue {
+  background: #3b4db2;
+}
+
+.dark-mode .circle-pink {
+  background: #a74e8d;
+}
+
+.dark-mode .circle-yellow {
+  background: #b5c753;
+}
+
 .time-date-container {
   display: flex;
   flex-direction: column;
@@ -100,10 +114,22 @@ body.dark-mode {
 
 #time {
   font-size: 3.2rem;
+  color: #2a2a2a;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode #time {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
 }
 
 #date-para {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  color: #474747;
+}
+
+.dark-mode #date-para {
+  color: #aaa;
 }
 
 .button-container {
@@ -123,13 +149,13 @@ button {
   font-weight: 500;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
   color: #2a2a2a;
 }
 
 .dark-mode button {
-  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1); /* Add this */
+  color: #f1f1f1; /* Improves contrast in dark mode */
 }
 
 button:hover {
@@ -139,7 +165,6 @@ button:hover {
 }
 
 .dark-mode button:hover {
-  background: rgba(255, 255, 255, 1);
   box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
 }
 
@@ -148,10 +173,59 @@ button:active {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+.dark-mode button:active {
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.15);
+}
+
 .btn-hr {
   background: rgba(115, 141, 255, 0.2);
 }
 
 .btn-time-zone {
   background: rgba(255, 124, 205, 0.2);
+}
+
+footer {
+  background-color: #1c2331;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  padding: 3px 0;
+}
+
+.dark-mode footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -1px 4px 0 rgba(255, 255, 255, 0.3);
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #cccccc;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+.github-icon {
+  width: 35px;
+  filter: brightness(0) invert(1);
+}
+
+footer:hover .github-icon {
+  transform: scale(1.1);
+}
+
+.container,
+.theme-mode-icon,
+button,
+footer,
+footer a,
+.github-icon {
+  transition: all 0.3s ease-in-out;
 }
