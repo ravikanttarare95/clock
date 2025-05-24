@@ -171,7 +171,7 @@ input {
 
 .dark-mode input {
   color: #f1f1f1;
-  box-shadow: 0 1px 3px #444;
+  box-shadow: 0 1px 3px #787878;
   border: 1px solid #555;
   text-shadow: 0 1px 1px #000000;
 }
@@ -183,7 +183,7 @@ input:focus {
 
 .dark-mode input:focus {
   outline: none;
-  box-shadow: 0 0 5px #6b6b6c;
+  box-shadow: 0 0 3px #9292ff;
 }
 
 input::placeholder {
@@ -383,8 +383,8 @@ footer a,
 
   input {
     border: none;
-    padding: 7px;
-    width: 55px;
+    padding: 8px;
+    width: 60px;
     border-radius: 8px;
     font-size: 0.8rem;
   }
