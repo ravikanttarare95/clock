@@ -6,7 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOCK</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        #timer-para {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 70%;
+        }
 
+        input {
+            padding: 10px;
+            width: 70px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px #ccc;
+        }
+
+        .dark-mode input {
+            background-color: #2b2b2b;
+            color: #f1f1f1;
+            box-shadow: 1px 2px 5px #444;
+            border: 1px solid #555;
+        }
+
+        input:focus {
+            outline: 2px solid #ffd8f2;
+            box-shadow: 0 0 5px #ffd8f2;
+        }
+
+        .dark-mode input:focus {
+            outline: none;
+            box-shadow: 0 0 5px #6b6b6c;
+        }
+
+        input::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .dark-mode input::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,9 +71,13 @@
                 </div>
                 <div id="date-para">Loading...</div>
             </div>
+
+            <div id="timer-para"><input id="timer-min" type="number" placeholder="MM" min="0"> : <input id="timer-sec"
+                    type="number" placeholder="SS" min="0"></div>
+
             <div class="button-container">
-                <button class="btn-hr" onclick="toggleHour()">12/24 hr</button>
-                <button class="btn-time-zone">Local Time</button>
+                <button class="btn-hr" onclick="toggleHour()">12 / 24 hr</button>
+                <button class="btn-time-zone">Set / Reset Timer</button>
             </div>
         </div>
     </div>
