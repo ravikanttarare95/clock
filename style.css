@@ -85,7 +85,7 @@ body.dark-mode {
   width: 200px;
   height: 200px;
   background: #e7ff7d;
-  bottom: 50px;
+  bottom: 80px;
   right: -90px;
 }
 
@@ -147,6 +147,53 @@ button {
 .dark-mode #date-para {
   color: #b9b9b9;
   text-shadow: 0 0 2px #000000;
+}
+
+#timer-para {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+}
+
+input {
+  padding: 10px;
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px #ccc;
+  backdrop-filter: blur(10px);
+  background: none;
+}
+
+.dark-mode input {
+  color: #f1f1f1;
+  box-shadow: 0 1px 3px #444;
+  border: 1px solid #555;
+  text-shadow: 0 1px 1px #000000;
+}
+
+input:focus {
+  outline: 2px solid #ffd8f2;
+  box-shadow: 0 0 5px #ffd8f2;
+}
+
+.dark-mode input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #6b6b6c;
+}
+
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.dark-mode input::placeholder {
+  color: #888;
+  font-style: italic;
 }
 
 .button-container {
@@ -274,9 +321,17 @@ footer a,
   .circle-yellow {
     width: 150px;
     height: 150px;
-    bottom: 75px;
+    bottom: 80px;
     right: 0px;
     background: #f7ffb3;
+  }
+
+  input {
+    border: none;
+  }
+
+  .dark-mode input {
+    border: none;
   }
 }
 
@@ -321,16 +376,21 @@ footer a,
   .circle-yellow {
     width: 110px;
     height: 110px;
-    bottom: 60px;
+    bottom: 75px;
     right: 0px;
     background: #f7ffb3;
   }
 
   input {
+    border: none;
     padding: 7px;
     width: 55px;
     border-radius: 8px;
     font-size: 0.8rem;
+  }
+
+  .dark-mode input {
+    border: none;
   }
 
   .button-container {
