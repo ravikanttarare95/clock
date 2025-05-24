@@ -146,6 +146,7 @@ button {
 
 .dark-mode #date-para {
   color: #b9b9b9;
+  text-shadow: 0 0 2px #000000;
 }
 
 .button-container {
