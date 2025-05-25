@@ -4,6 +4,7 @@ const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 let amPM = document.getElementById("am-pm");
+const btnTimeToggle = document.getElementById("btn-toggle-timer");
 const days = [
   "Sunday",
   "Monday",
@@ -93,41 +94,51 @@ function toggleHour() {
 const timerPara = document.getElementById("timer-para");
 let timeInterval;
 let totalInputSeconds = 0;
+let isTimeRunning = false;
+function toggleTimer() {
+  if (!isTimeRunning) {
+    const timerInputMin =
+      parseInt(document.getElementById("timer-min").value) || 0;
+    const timerInputSec =
+      parseInt(document.getElementById("timer-sec").value) || 0;
 
-function setTimer() {
-  clearInterval(timeInterval);
-
-  const timerInputMin =
-    parseInt(document.getElementById("timer-min").value) || 0;
-  const timerInputSec =
-    parseInt(document.getElementById("timer-sec").value) || 0;
-
-  if (
-    isNaN(timerInputMin) ||
-    timerInputMin < 0 ||
-    isNaN(timerInputMin) ||
-    timerInputMin < 0
-  ) {
-    alert("Please enter valid non-negative numbers for minutes and seconds.");
-    return;
-  }
-
-  totalInputSeconds = parseInt(timerInputMin) * 60 + parseInt(timerInputSec);
-
-  if (totalInputSeconds <= 0) {
-    alert("Enter a valid number greater than zero.");
-    return;
-  }
-  updateTimerDisplay();
-  timeInterval = setInterval(() => {
-    totalInputSeconds--;
-    updateTimerDisplay();
-
-    if (totalInputSeconds < 0) {
-      clearInterval(timeInterval);
-      timerPara.innerHTML = "Time's up!";
+    if (
+      isNaN(timerInputMin) ||
+      timerInputMin < 0 ||
+      isNaN(timerInputMin) ||
+      timerInputMin < 0
+    ) {
+      alert("Please enter valid non-negative numbers for minutes and seconds.");
+      return;
     }
-  }, 1000);
+
+    totalInputSeconds = parseInt(timerInputMin) * 60 + parseInt(timerInputSec);
+
+    if (totalInputSeconds <= 0) {
+      alert("Enter a valid number greater than zero.");
+      return;
+    }
+    updateTimerDisplay();
+    isTimeRunning = true;
+    btnTimeToggle.innerText = "Reset Timer";
+    timeInterval = setInterval(() => {
+      totalInputSeconds--;
+      updateTimerDisplay();
+
+      if (totalInputSeconds < 0) {
+        clearInterval(timeInterval);
+        timerPara.innerHTML =
+          "<span style='color: #ff4c4c; font-weight: bold;'>Time's up!</span>";
+        btnTimeToggle.innerText = "Reset Timer";
+      }
+    }, 1000);
+  } else {
+    clearInterval(timeInterval);
+    timerPara.innerHTML = `<input id="timer-min" type="number" placeholder="MM" min="0"> : <input id="timer-sec"
+                    type="number" placeholder="SS" min="0"></input>`;
+    isTimeRunning = false;
+    btnTimeToggle.innerText = "Set Timer";
+  }
 }
 
 function updateTimerDisplay() {
