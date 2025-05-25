@@ -121,6 +121,7 @@ function toggleTimer() {
     updateTimerDisplay();
     isTimeRunning = true;
     btnTimeToggle.innerText = "Reset Timer";
+    btnTimeToggle.classList.add("btn-reset");
     timeInterval = setInterval(() => {
       totalInputSeconds--;
       updateTimerDisplay();
@@ -130,6 +131,7 @@ function toggleTimer() {
         timerPara.innerHTML =
           "<span style='color: #ff4c4c; font-weight: bold;'>Time's up!</span>";
         btnTimeToggle.innerText = "Reset Timer";
+        btnTimeToggle.classList.add("btn-reset");
       }
     }, 1000);
   } else {
@@ -138,6 +140,7 @@ function toggleTimer() {
                     type="number" placeholder="SS" min="0"></input>`;
     isTimeRunning = false;
     btnTimeToggle.innerText = "Set Timer";
+    btnTimeToggle.classList.remove("btn-reset");
   }
 }
 
