@@ -89,3 +89,37 @@ function toggleTheme() {
 function toggleHour() {
   is24HourFormat = !is24HourFormat;
 }
+
+const timerPara = document.getElementById("timer-para");
+let timeInterval;
+let totalInputSeconds = 0;
+
+function setTimer() {
+  clearInterval(timeInterval);
+
+  const timerInputMin =
+    parseInt(document.getElementById("timer-min").value) || 0;
+  const timerInputSec =
+    parseInt(document.getElementById("timer-sec").value) || 0;
+    
+  totalInputSeconds = parseInt(timerInputMin) * 60 + parseInt(timerInputSec);
+
+  if (totalInputSeconds <= 0) {
+    alert("Enter a valid number greater than zero.");
+    return;
+  }
+  timeInterval = setInterval(() => {
+    let countDownMin = Math.floor(totalInputSeconds / 60);
+    let countDownSec = totalInputSeconds % 60;
+    timerPara.innerHTML = `${String(countDownMin).padStart(2, "0")} : ${String(
+      countDownSec
+    ).padStart(2, "0")}`;
+
+    totalInputSeconds--;
+
+    if (totalInputSeconds < 0) {
+      clearInterval(timeInterval);
+      timerPara.innerHTML = "Time's up!";
+    }
+  }, 1000);
+}
