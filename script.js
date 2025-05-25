@@ -101,7 +101,17 @@ function setTimer() {
     parseInt(document.getElementById("timer-min").value) || 0;
   const timerInputSec =
     parseInt(document.getElementById("timer-sec").value) || 0;
-    
+
+  if (
+    isNaN(timerInputMin) ||
+    timerInputMin < 0 ||
+    isNaN(timerInputMin) ||
+    timerInputMin < 0
+  ) {
+    alert("Please enter valid non-negative numbers for minutes and seconds.");
+    return;
+  }
+
   totalInputSeconds = parseInt(timerInputMin) * 60 + parseInt(timerInputSec);
 
   if (totalInputSeconds <= 0) {
