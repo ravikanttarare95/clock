@@ -118,18 +118,22 @@ function setTimer() {
     alert("Enter a valid number greater than zero.");
     return;
   }
+  updateTimerDisplay();
   timeInterval = setInterval(() => {
-    let countDownMin = Math.floor(totalInputSeconds / 60);
-    let countDownSec = totalInputSeconds % 60;
-    timerPara.innerHTML = `${String(countDownMin).padStart(2, "0")} : ${String(
-      countDownSec
-    ).padStart(2, "0")}`;
-
     totalInputSeconds--;
+    updateTimerDisplay();
 
     if (totalInputSeconds < 0) {
       clearInterval(timeInterval);
       timerPara.innerHTML = "Time's up!";
     }
   }, 1000);
+}
+
+function updateTimerDisplay() {
+  let countDownMin = Math.floor(totalInputSeconds / 60);
+  let countDownSec = totalInputSeconds % 60;
+  timerPara.innerHTML = `${String(countDownMin).padStart(2, "0")} : ${String(
+    countDownSec
+  ).padStart(2, "0")}`;
 }
